@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build'){
             steps{
-                bat 'mvn clean package'
-                bat "docker build . -t test:${env.BUILD_ID}"
+                command 'mvn clean package'
+                command "docker build . -t test:${env.BUILD_ID}"
             }
         }
     }
